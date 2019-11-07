@@ -62,19 +62,22 @@
 
 
 // list of functions that will be displayed
-functionList effectList[] = {threeSine,
-                             threeDee,
-                             scrollTextZero,
-                             plasma,
-                             confetti,
-                             rider,
-                             scrollTextOne,
-                             glitter,
-                             slantBars,
-                             scrollTextTwo,
-                             colorFill,
-                             sideRain
-                            };
+//functionList effectList[] = {threeSine,
+//                             threeDee,
+//                             scrollTextZero,
+//                             plasma,
+//                             confetti,
+//                             rider,
+//                             scrollTextOne,
+//                             glitter,
+//                             slantBars,
+//                             scrollTextTwo,
+//                             colorFill,
+//                             sideRain
+//                            };
+
+
+functionList effectList[] = {scrollTextZero, rider, scrollTextOne, scrollTextTwo};
 
 const byte numEffects = (sizeof(effectList)/sizeof(effectList[0]));
 
@@ -139,8 +142,3 @@ void loop()
   FastLED.show(); // send the contents of the led memory to the LEDs
 
 }
-
-
-
-
-

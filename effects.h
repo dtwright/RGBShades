@@ -254,7 +254,7 @@ void slantBars() {
 #define RAINBOW 1
 #define charSpacing 2
 // Scroll a text string
-void scrollText(byte message, byte style, CRGB fgColor, CRGB bgColor) {
+void scrollText(byte message, byte style, CRGB fgColor, CRGB bgColor, byte scrollSpeed) {
   static byte currentMessageChar = 0;
   static byte currentCharColumn = 0;
   static byte paletteCycle = 0;
@@ -265,7 +265,7 @@ void scrollText(byte message, byte style, CRGB fgColor, CRGB bgColor) {
   // startup tasks
   if (effectInit == false) {
     effectInit = true;
-    effectDelay = 35;
+    effectDelay = scrollSpeed;
     currentMessageChar = 0;
     currentCharColumn = 0;
     selectFlashString(message);
@@ -317,14 +317,13 @@ void scrollText(byte message, byte style, CRGB fgColor, CRGB bgColor) {
 
 
 void scrollTextZero() {
-  scrollText(0, NORMAL, CRGB::Red, CRGB::Black);
+  scrollText(0, NORMAL, CRGB(80, 130, 240), CRGB::Black, 70);
 }
 
 void scrollTextOne() {
-  scrollText(1, RAINBOW, 0, CRGB::Black);
+  scrollText(1, RAINBOW, 0, CRGB::Black, 75);
 }
 
 void scrollTextTwo() {
-  scrollText(2, NORMAL, CRGB::Green, CRGB(0,0,8));
+  scrollText(2, NORMAL, CRGB::Green, CRGB(0,0,8), 60);
 }
-
